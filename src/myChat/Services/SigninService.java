@@ -2,7 +2,7 @@ package myChat.Services;
 
 import java.util.ArrayList;
 
-import myChat.ServiceResponse.ISigninServiceResponse;
+import myChat.ServiceResponse.ISignupServiceResponse;
 import DAL.UsersData;
 import Kivun.Infra.DTO.ServiceMessage;
 import Kivun.Infra.Interfaces.IDTO;
@@ -20,6 +20,7 @@ SignInResultDTO _resultDTO;
 	public void Execute() {
 		 users =  UsersData.Instance();
 		 _user.set_isExists(getUserByUsernameAndPass());
+		 _user.set_isActive(true);
 		 _resultDTO.set_result(_user);
 	}
 
@@ -34,7 +35,7 @@ SignInResultDTO _resultDTO;
 		//// TODO Auto-generated method stub
 		ServiceMessage serviceMessage = new ServiceMessage(); 
 		serviceMessage.set_DTO(_resultDTO);
-		serviceMessage.set_Handler(ISigninServiceResponse.class);
+		serviceMessage.set_Handler(ISignupServiceResponse.class);
 		return serviceMessage; 
 	}
 

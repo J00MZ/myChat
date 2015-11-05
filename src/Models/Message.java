@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Message {
  private String _sender;
- private ArrayList<User>_recipients;
+ private ArrayList<UserDTO>_recipients;
  private int _timesapn;
  private String _textMessage;
 public String get_sender() {
@@ -13,10 +13,10 @@ public String get_sender() {
 public void set_sender(String _sender) {
 	this._sender = _sender;
 }
-public ArrayList<User> get_recipients() {
+public ArrayList<UserDTO> get_recipients() {
 	return _recipients;
 }
-public void set_recipients(ArrayList<User> _recipients) {
+public void set_recipients(ArrayList<UserDTO> _recipients) {
 	this._recipients = _recipients;
 }
 public int get_timesapn() {
