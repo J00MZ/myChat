@@ -8,14 +8,18 @@ import Kivun.Infra.DTO.Annotations.SetProperty;
 import Kivun.Infra.Interfaces.IDTO;
 
 public class SignInResultDTO implements IDTO {
-	UserDTO _result;
+	String _result;
 	@GetProperty(PropName="Result")
-	public UserDTO get_result() {
+	public String get_result() {
 		return _result;
 	}
 	@SetProperty(PropName="Result")
 	public void set_result(UserDTO _result) {
-		this._result = _result;
+		if(_result.get_isExists()){
+		this._result = "succeed";
+		}else{
+			this._result = "faild";
+		}
 	} 
 	@Override
 	public String toString(){

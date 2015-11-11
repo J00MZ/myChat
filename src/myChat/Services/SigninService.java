@@ -19,8 +19,13 @@ SignInResultDTO _resultDTO;
 	@Override
 	public void Execute() {
 		 users =  UsersData.Instance();
-		 _user.set_isExists(getUserByUsernameAndPass());
+		 if(getUserByUsernameAndPass()){
+		 _user.set_isExists(true);
 		 _user.set_isActive(true);
+		 }else{
+			 _user.set_isExists(false);
+			 _user.set_isActive(false); 
+		 }
 		 _resultDTO.set_result(_user);
 	}
 

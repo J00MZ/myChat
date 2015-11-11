@@ -7,17 +7,18 @@ import Kivun.Infra.Interfaces.IDTO;
 import Kivun.Infra.Interfaces.IService;
 import Kivun.Infra.Interfaces.IServiceMessage;
 import Models.SignInResultDTO;
+import Models.SignUpResultDTO;
 import Models.UserDTO;
 
 public class SignupService implements ISignupService,IService{
     UserDTO _user;
     private ArrayList<UserDTO> users;
-    SignInResultDTO _resultDTO; 
+    SignUpResultDTO _resultDTO; 
 	@Override
 	public void Execute() {
 		
 		users  =  UsersData.Instance();
-		AddUserToList();
+		_resultDTO.set_result(AddUserToList());
 	}
 
 	@Override
