@@ -31,7 +31,7 @@ public class CalculatorServlet extends HttpServlet {
 	
 	@Override
 	public void init(ServletConfig servletConfig) throws ServletException {
-		System.out.println("=====>>>>>Init Calculator");
+		System.out.println("=====>>>>> Initializing Chat server.... =====>>>>>");
 		_servicesFactory = 		ServicesFactory.Instance();
 		super.init(servletConfig);
 		Enumeration<String> servicesNames = servletConfig.getInitParameterNames();
